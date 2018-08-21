@@ -19,7 +19,10 @@ class ViewController: UIViewController {
 
     @IBAction func oButtonClicked(_ sender: UIButton) {
 								// Comment to force commit
+								// Forcing commit again
         self.oLabelHello.text = "How're you, \(self.oText.text!) ?"
+					
+								var x = 1
     }
     
     override func viewDidLoad() {
