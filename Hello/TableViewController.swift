@@ -78,18 +78,13 @@ class TableViewController: UITableViewController {
         // let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-
-					
-					
-					
-				
-
-					
-					
+	
 								// let cell = UITableViewCell()
   			   		let cell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath)
 //
 //   					cell.textLabel?.text = "Item \(indexPath.row)"
+
+					cell.layoutMargins.left = 48
 
 					switch indexPath.section
 					{

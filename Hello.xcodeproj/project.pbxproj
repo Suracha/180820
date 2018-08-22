@@ -15,6 +15,7 @@
 		C28C11D9212A785900076706 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C28C11D7212A785900076706 /* LaunchScreen.storyboard */; };
 		C28C11E4212A785900076706 /* HelloTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28C11E3212A785900076706 /* HelloTests.swift */; };
 		C28C11EF212A785900076706 /* HelloUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28C11EE212A785900076706 /* HelloUITests.swift */; };
+		C2BC77FB212CF9A500337540 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BC77FA212CF9A500337540 /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C28C11EA212A785900076706 /* HelloUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C28C11EE212A785900076706 /* HelloUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloUITests.swift; sourceTree = "<group>"; };
 		C28C11F0212A785900076706 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2BC77FA212CF9A500337540 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				C28C11D5212A785900076706 /* Assets.xcassets */,
 				C28C11D7212A785900076706 /* LaunchScreen.storyboard */,
 				C28C11DA212A785900076706 /* Info.plist */,
+				C2BC77FA212CF9A500337540 /* CustomTableViewCell.swift */,
 			);
 			path = Hello;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			files = (
 				C28C11D1212A785300076706 /* ViewController.swift in Sources */,
 				C23C7ECB212BCAC500D65427 /* TableViewController.swift in Sources */,
+				C2BC77FB212CF9A500337540 /* CustomTableViewCell.swift in Sources */,
 				C28C11CF212A785300076706 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
