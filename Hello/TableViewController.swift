@@ -123,10 +123,24 @@ class TableViewController: UITableViewController {
 					return title
 				}
 	
+	/*
+				override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+				{
+								return 48.0
+				}
+	*/
 
-	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)	{
-		print("you just selected row \(indexPath.row) on section \(indexPath.section)")
-	}
+				override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
+				{
+								view.tintColor = UIColor.lightGray
+				//  let header = view as! UITableViewHeaderFooterView
+				//  header.textLabel?.textColor = UIColor.darkGray
+				}
+	
+				override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+				{
+								print("you just selected row \(indexPath.row) on section \(indexPath.section)")
+				}
 	
 	
     /*
