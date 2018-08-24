@@ -37,34 +37,7 @@ class TableViewController: UITableViewController
 			]
 	]
 
-/*
-	let dailyTasks = 
-	[
-		"Check all windows",
-		"Check all doors",
-		"Is the boiler fueled?",
-		"Check the mailbox",
-		"Empty trash containers",
-		"If freezing, check water pipes",
-		"Document \"strange and unusual\" occurrences"
-	]
 	
-	let weeklyTasks = 
-	[
-		"Check inside all cabins",
-		"Flush all lavatories in cabins",
-		"Walk the perimeter of property"
-	]
-	
-	let monthlyTasks = 
-	[
-		"Test security alarm",
-		"Test motion detectors",
-		"Test smoke alarms"
-	]
-*/
-	
-
     override func viewDidLoad() 
 	{
         super.viewDidLoad()
@@ -94,27 +67,6 @@ class TableViewController: UITableViewController
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int 
 	{
         // #warning Incomplete implementation, return the number of rows
-
-/*
-		var nRow: Int = 0
-
-		switch section
-		{
-			case 0:
-				nRow = self.dailyTasks.count
-				//return(self.dailyTasks.count)
-			case 1:
-				nRow = self.weeklyTasks.count
-				//return(self.weeklyTasks.count)
-			case 2:
-				nRow = self.monthlyTasks.count
-				//return(self.monthlyTasks.count)
-			default:
-				nRow = 0
-		}
-		
-		return nRow
-*/
 		
 		let sTitle: [String] = [String](self.oTasks.keys)
 		
