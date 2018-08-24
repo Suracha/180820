@@ -123,11 +123,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="23.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Clock" translatesAutoresizingMaskIntoConstraints="NO" id="igq-HB-T1e">
-                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" image="Clock" translatesAutoresizingMaskIntoConstraints="NO" id="igq-HB-T1e">
+                                            <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                            <edgeInsets key="layoutMargins" top="2" left="2" bottom="2" right="2"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="igq-HB-T1e" firstAttribute="leading" secondItem="eFK-yE-G51" secondAttribute="leading" id="AUU-nF-Jvp"/>
                                         <constraint firstItem="igq-HB-T1e" firstAttribute="top" secondItem="eFK-yE-G51" secondAttribute="top" id="V3o-H4-vBb"/>
                                     </constraints>
                                 </tableViewCellContentView>

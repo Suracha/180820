@@ -11,6 +11,32 @@ import UIKit
 class TableViewController: UITableViewController 
 {
 	
+	let oTasks: [String : [String]] =
+	[
+		"Daily Tasks" :
+			[
+				"Check all windows",
+				"Check all doors",
+				"Is the boiler fueled?",
+				"Check the mailbox",
+				"Empty trash containers",
+				"If freezing, check water pipes",
+				"Document \"strange and unusual\" occurrences"
+			],
+		"Weekly Tasks" :
+			[
+				"Check inside all cabins",
+				"Flush all lavatories in cabins",
+				"Walk the perimeter of property"
+			],
+		"Monthly Tasks" :
+			[
+				"Check inside all cabins",
+				"Flush all lavatories in cabins",
+				"Walk the perimeter of property"
+			]
+	]
+
 	let dailyTasks = 
 	[
 		"Check all windows",
@@ -60,31 +86,34 @@ class TableViewController: UITableViewController
     override func numberOfSections(in tableView: UITableView) -> Int 
 	{
         // #warning Incomplete implementation, return the number of sections
-        return 3
+		
+		print(self.oTasks.count)
+		
+		return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int 
 	{
         // #warning Incomplete implementation, return the number of rows
-					
-		var row = 0
+
+		var nRow: Int = 0
 
 		switch section
 		{
 			case 0:
-				row = self.dailyTasks.count
+				nRow = self.dailyTasks.count
 				//return(self.dailyTasks.count)
 			case 1:
-				row = self.weeklyTasks.count
+				nRow = self.weeklyTasks.count
 				//return(self.weeklyTasks.count)
 			case 2:
-				row = self.monthlyTasks.count
+				nRow = self.monthlyTasks.count
 				//return(self.monthlyTasks.count)
 			default:
-				row = 0
+				nRow = 0
 		}
 					
-        return row
+        return nRow
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 
@@ -94,47 +123,57 @@ class TableViewController: UITableViewController
         // Configure the cell...
 	
 		// let cell = UITableViewCell()
-  		let cell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath)
+		let oCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath)
 
 		// cell.textLabel?.text = "Item \(indexPath.row)"
 
-		cell.layoutMargins.left = 48
+		oCell.layoutMargins.left = 48
 
+/*
 		switch indexPath.section
 		{
 			case 0:
-				cell.textLabel?.text = self.dailyTasks[indexPath.row]
+				oCell.textLabel?.text = self.dailyTasks[indexPath.row]
 			case 1:
-				cell.textLabel?.text = self.weeklyTasks[indexPath.row]
+				oCell.textLabel?.text = self.weeklyTasks[indexPath.row]
 			case 2:
-				cell.textLabel?.text = self.monthlyTasks[indexPath.row]
+				oCell.textLabel?.text = self.monthlyTasks[indexPath.row]
 			default:
-				cell.textLabel?.text = ""
+				oCell.textLabel?.text = ""
 		}
+*/
+		
+		let sTexts: [[String]] = [[String]](self.oTasks.values)
 
-        return cell
+		oCell.textLabel?.text = sTexts[indexPath.section][indexPath.row]
+		
+        return oCell
     }
 	
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
 	{
-		var	title = ""
+/*
+		var	sTitle: String = ""
 		
 		switch section
 		{
 			case 0:
-				title = "Daily Task"
+				sTitle = "Daily Task"
 				//return(self.dailyTasks.count)
 			case 1:
-				title = "Weekly Task"
+				sTitle = "Weekly Task"
 				//return(self.weeklyTasks.count)
 			case 2:
-				title = "Monthly Task"
+				sTitle = "Monthly Task"
 				//return(self.monthlyTasks.count)
 			default:
-				title = ""
+				sTitle = ""
 		}
+*/
+
+		let sTitle: [String] = [String](self.oTasks.keys)
 		
-		return title
+		return sTitle[section]
 	}
 	
 /*
