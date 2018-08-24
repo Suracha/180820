@@ -8,28 +8,38 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController 
+{
+	
+	let dailyTasks = 
+	[
+		"Check all windows",
+		"Check all doors",
+		"Is the boiler fueled?",
+		"Check the mailbox",
+		"Empty trash containers",
+		"If freezing, check water pipes",
+		"Document \"strange and unusual\" occurrences"
+	]
+	
+	let weeklyTasks = 
+	[
+		"Check inside all cabins",
+		"Flush all lavatories in cabins",
+		"Walk the perimeter of property"
+	]
+	
+	let monthlyTasks = 
+	[
+		"Test security alarm",
+		"Test motion detectors",
+		"Test smoke alarms"
+	]
 
 	
-	let dailyTasks = ["Check all windows",
-																			"Check all doors",
-																			"Is the boiler fueled?",
-																			"Check the mailbox",
-																			"Empty trash containers",
-																			"If freezing, check water pipes",
-																			"Document \"strange and unusual\" occurrences",]
-	
-	let weeklyTasks = ["Check inside all cabins",
-																				"Flush all lavatories in cabins",
-																				"Walk the perimeter of property",]
-	
-	let monthlyTasks = ["Test security alarm",
-																					"Test motion detectors",
-																					"Test smoke alarms"]
 
-	
-
-    override func viewDidLoad() {
+    override func viewDidLoad() 
+	{
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -39,108 +49,112 @@ class TableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() 
+	{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int 
+	{
         // #warning Incomplete implementation, return the number of sections
         return 3
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int 
+	{
         // #warning Incomplete implementation, return the number of rows
 					
-								var row = 0
-					
-								switch section
-								{
-										case 0:
-											row = self.dailyTasks.count
-											//return(self.dailyTasks.count)
-										case 1:
-											row = self.weeklyTasks.count
-											//return(self.weeklyTasks.count)
-										case 2:
-											row = self.monthlyTasks.count
-											//return(self.monthlyTasks.count)
-								default:
-									row = 0
-								}
+		var row = 0
+
+		switch section
+		{
+			case 0:
+				row = self.dailyTasks.count
+				//return(self.dailyTasks.count)
+			case 1:
+				row = self.weeklyTasks.count
+				//return(self.weeklyTasks.count)
+			case 2:
+				row = self.monthlyTasks.count
+				//return(self.monthlyTasks.count)
+			default:
+				row = 0
+		}
 					
         return row
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 
+	{
         // let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
 	
-								// let cell = UITableViewCell()
-  			   		let cell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath)
-//
-//   					cell.textLabel?.text = "Item \(indexPath.row)"
+		// let cell = UITableViewCell()
+  		let cell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath)
 
-					cell.layoutMargins.left = 48
+		// cell.textLabel?.text = "Item \(indexPath.row)"
 
-					switch indexPath.section
-					{
-					case 0:
-						cell.textLabel?.text = self.dailyTasks[indexPath.row]
-					case 1:
-						cell.textLabel?.text = self.weeklyTasks[indexPath.row]
-					case 2:
-						cell.textLabel?.text = self.monthlyTasks[indexPath.row]
-					default:
-					cell.textLabel?.text = ""
-					}
+		cell.layoutMargins.left = 48
+
+		switch indexPath.section
+		{
+			case 0:
+				cell.textLabel?.text = self.dailyTasks[indexPath.row]
+			case 1:
+				cell.textLabel?.text = self.weeklyTasks[indexPath.row]
+			case 2:
+				cell.textLabel?.text = self.monthlyTasks[indexPath.row]
+			default:
+				cell.textLabel?.text = ""
+		}
 
         return cell
     }
 	
-				override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
-				{
-					var	title = ""
-					
-					switch section
-					{
-					case 0:
-						title = "Daily Task"
-					//return(self.dailyTasks.count)
-					case 1:
-						title = "Weekly Task"
-					//return(self.weeklyTasks.count)
-					case 2:
-						title = "Monthly Task"
-					//return(self.monthlyTasks.count)
-					default:
-						title = ""
-					}
-					
-					return title
-				}
+	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+	{
+		var	title = ""
+		
+		switch section
+		{
+			case 0:
+				title = "Daily Task"
+				//return(self.dailyTasks.count)
+			case 1:
+				title = "Weekly Task"
+				//return(self.weeklyTasks.count)
+			case 2:
+				title = "Monthly Task"
+				//return(self.monthlyTasks.count)
+			default:
+				title = ""
+		}
+		
+		return title
+	}
 	
-	/*
-				override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
-				{
-								return 48.0
-				}
-	*/
+/*
+	override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+	{
+		return 48.0
+	}
+*/
 
-				override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
-				{
-								view.tintColor = UIColor.lightGray
-				//  let header = view as! UITableViewHeaderFooterView
-				//  header.textLabel?.textColor = UIColor.darkGray
-				}
-	
-				override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-				{
-								print("you just selected row \(indexPath.row) on section \(indexPath.section)")
-				}
+	override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
+	{
+		view.tintColor = UIColor.lightGray
+		//  let header = view as! UITableViewHeaderFooterView
+		//  header.textLabel?.textColor = UIColor.darkGray
+	}
+
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+	{
+		print("you just selected row \(indexPath.row) on section \(indexPath.section)")
+	}
 	
 	
     /*

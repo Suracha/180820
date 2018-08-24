@@ -86,9 +86,9 @@
 				C28C11ED212A785900076706 /* HelloUITests */,
 				C28C11CC212A785300076706 /* Products */,
 			);
-			indentWidth = 1;
+			indentWidth = 4;
 			sourceTree = "<group>";
-			tabWidth = 1;
+			tabWidth = 4;
 			usesTabs = 1;
 		};
 		C28C11CC212A785300076706 /* Products */ = {
