@@ -37,6 +37,7 @@ class TableViewController: UITableViewController
 			]
 	]
 
+/*
 	let dailyTasks = 
 	[
 		"Check all windows",
@@ -61,7 +62,7 @@ class TableViewController: UITableViewController
 		"Test motion detectors",
 		"Test smoke alarms"
 	]
-
+*/
 	
 
     override func viewDidLoad() 
@@ -87,15 +88,14 @@ class TableViewController: UITableViewController
 	{
         // #warning Incomplete implementation, return the number of sections
 		
-		print(self.oTasks.count)
-		
-		return 3
+		return self.oTasks.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int 
 	{
         // #warning Incomplete implementation, return the number of rows
 
+/*
 		var nRow: Int = 0
 
 		switch section
@@ -112,39 +112,27 @@ class TableViewController: UITableViewController
 			default:
 				nRow = 0
 		}
-					
-        return nRow
+		
+		return nRow
+*/
+		
+		let sTitle: [String] = [String](self.oTasks.keys)
+		
+        return self.oTasks[sTitle[section]]!.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 
 	{
         // let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
         // Configure the cell...
 	
 		// let cell = UITableViewCell()
-		let oCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath)
-
 		// cell.textLabel?.text = "Item \(indexPath.row)"
-
-		oCell.layoutMargins.left = 48
-
-/*
-		switch indexPath.section
-		{
-			case 0:
-				oCell.textLabel?.text = self.dailyTasks[indexPath.row]
-			case 1:
-				oCell.textLabel?.text = self.weeklyTasks[indexPath.row]
-			case 2:
-				oCell.textLabel?.text = self.monthlyTasks[indexPath.row]
-			default:
-				oCell.textLabel?.text = ""
-		}
-*/
 		
+		let oCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath)
 		let sTexts: [[String]] = [[String]](self.oTasks.values)
 
+		oCell.layoutMargins.left = 48
 		oCell.textLabel?.text = sTexts[indexPath.section][indexPath.row]
 		
         return oCell
@@ -152,25 +140,6 @@ class TableViewController: UITableViewController
 	
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
 	{
-/*
-		var	sTitle: String = ""
-		
-		switch section
-		{
-			case 0:
-				sTitle = "Daily Task"
-				//return(self.dailyTasks.count)
-			case 1:
-				sTitle = "Weekly Task"
-				//return(self.weeklyTasks.count)
-			case 2:
-				sTitle = "Monthly Task"
-				//return(self.monthlyTasks.count)
-			default:
-				sTitle = ""
-		}
-*/
-
 		let sTitle: [String] = [String](self.oTasks.keys)
 		
 		return sTitle[section]
@@ -194,7 +163,6 @@ class TableViewController: UITableViewController
 	{
 		print("you just selected row \(indexPath.row) on section \(indexPath.section)")
 	}
-	
 	
     /*
     // Override to support conditional editing of the table view.

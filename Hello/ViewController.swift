@@ -23,6 +23,7 @@ class ViewController: UIViewController
 	{
 		// Comment to force commit
 		// Forcing commit again
+		
 		self.oLabelHello.text = "How're you, \(self.oText.text!) ?"
 	}
 
