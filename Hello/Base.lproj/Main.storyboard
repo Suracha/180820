@@ -111,13 +111,13 @@
         <scene sceneID="i0C-jQ-Czs">
             <objects>
                 <tableViewController id="Foq-cJ-rXL" customClass="TableViewController" customModule="Hello" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="32" sectionHeaderHeight="40" sectionFooterHeight="32" contentViewInsetsToSafeArea="NO" id="WGC-5f-c8D">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="48" sectionFooterHeight="32" contentViewInsetsToSafeArea="NO" id="WGC-5f-c8D">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="normalCell" rowHeight="32" id="4U8-kk-Vb5" customClass="CustomTableViewCell" customModule="Hello" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="40" width="320" height="32"/>
+                                <rect key="frame" x="0.0" y="48" width="320" height="32"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" tableViewCell="4U8-kk-Vb5" id="eFK-yE-G51">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="31.5"/>

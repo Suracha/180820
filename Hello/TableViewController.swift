@@ -11,41 +11,74 @@ import UIKit
 class TableViewController: UITableViewController 
 {
 	
+/*
 	let oTasks: [String : [String]] =
 	[
-		
 		"Daily Tasks" :
-			[
-				"Check all windows",
-				"Check all doors",
-				"Is the boiler fueled?",
-				"Check the mailbox",
-				"Empty trash containers",
-				"If freezing, check water pipes",
-				"Document \"strange and unusual\" occurrences"
-			],
-		
+		[
+			"Check all windows",
+			"Check all doors",
+			"Is the boiler fueled?",
+			"Check the mailbox",
+			"Empty trash containers",
+			"If freezing, check water pipes",
+			"Document \"strange and unusual\" occurrences"
+		],
 		"Weekly Tasks" :
-			[
-				"Check inside all cabins",
-				"Flush all lavatories in cabins",
-				"Walk the perimeter of property"
-			],
-		
+		[
+			"Check inside all cabins",
+			"Flush all lavatories in cabins",
+			"Walk the perimeter of property"
+		],
 		"Monthly Tasks" :
-			[
-				"Check inside all cabins",
-				"Flush all lavatories in cabins",
-				"Walk the perimeter of property"
-			],
-		
+		[
+			"Check inside all cabins",
+			"Flush all lavatories in cabins",
+			"Walk the perimeter of property"
+		],
 		"Annually Tasks" :
-			[
-				"A happy birthday party",
-				"An aniversary evening",
-				"Two weeks of travel"
-			]
-		
+		[
+			"A happy birthday party",
+			"An aniversary evening",
+			"Two weeks of travel"
+		]
+	]
+*/
+	
+	let sTaskTitles: [String] =
+	[
+		"Daily Tasks",
+		"Weekly Tasks",
+		"Monthly Tasks",
+		"Annually Tasks"
+	]
+
+	let sTasks: [[String]] =
+	[
+		[
+			"Check all windows",
+			"Check all doors",
+			"Is the boiler fueled?",
+			"Check the mailbox",
+			"Empty trash containers",
+			"If freezing, check water pipes",
+			"Document \"strange and unusual\" occurrences"
+		],
+		[
+			"Check inside all cabins",
+			"Flush all lavatories in cabins",
+			"Walk the perimeter of property"
+		],
+		[
+			"Check inside all cabins",
+			"Flush all lavatories in cabins",
+			"Walk the perimeter of property"
+		],
+		[
+			"A happy birthday party",
+			"An aniversary evening",
+			"Two weeks of travel"
+		]
 	]
 
 	
@@ -72,16 +105,17 @@ class TableViewController: UITableViewController
 	{
         // #warning Incomplete implementation, return the number of sections
 		
-		return self.oTasks.count
-    }
+	///	return self.oTasks.count
+		return sTaskTitles.count
+	}
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int 
 	{
         // #warning Incomplete implementation, return the number of rows
 		
-		let sTitle: [String] = [String](self.oTasks.keys)
+	///	let sTitle: [String] = [String](self.oTasks.keys)
 		
-        return self.oTasks[sTitle[section]]!.count
+        return self.sTasks[section].count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 
@@ -89,23 +123,29 @@ class TableViewController: UITableViewController
         // let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         // Configure the cell...
 	
-		// let cell = UITableViewCell()
-		// cell.textLabel?.text = "Item \(indexPath.row)"
+	//	let cell = UITableViewCell()
+	//	cell.textLabel?.text = "Item \(indexPath.row)"
 		
+	///	let sTexts: [[String]] = [[String]](self.oTasks.values)
 		let oCell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath)
-		let sTexts: [[String]] = [[String]](self.oTasks.values)
 
 		oCell.layoutMargins.left = 48
-		oCell.textLabel?.text = sTexts[indexPath.section][indexPath.row]
 		
+		oCell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+		oCell.textLabel?.numberOfLines = 0
+
+	///	oCell.textLabel?.text = sTexts[indexPath.section][indexPath.row]
+		oCell.textLabel?.text = sTasks[indexPath.section][indexPath.row]
+
         return oCell
-    }
+	}
 	
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
 	{
-		let sTitle: [String] = [String](self.oTasks.keys)
+	///	let sTitle: [String] = [String](self.oTasks.keys)
 		
-		return sTitle[section]
+	///	return sTitle[section]
+		return sTaskTitles[section]
 	}
 	
 /*
@@ -118,8 +158,8 @@ class TableViewController: UITableViewController
 	override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
 	{
 		view.tintColor = UIColor.lightGray
-		//  let header = view as! UITableViewHeaderFooterView
-		//  header.textLabel?.textColor = UIColor.darkGray
+	//  let header = view as! UITableViewHeaderFooterView
+	//  header.textLabel?.textColor = UIColor.darkGray
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
