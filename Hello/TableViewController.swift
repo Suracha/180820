@@ -13,6 +13,7 @@ class TableViewController: UITableViewController
 	
 	let oTasks: [String : [String]] =
 	[
+		
 		"Daily Tasks" :
 			[
 				"Check all windows",
@@ -23,18 +24,28 @@ class TableViewController: UITableViewController
 				"If freezing, check water pipes",
 				"Document \"strange and unusual\" occurrences"
 			],
+		
 		"Weekly Tasks" :
 			[
 				"Check inside all cabins",
 				"Flush all lavatories in cabins",
 				"Walk the perimeter of property"
 			],
+		
 		"Monthly Tasks" :
 			[
 				"Check inside all cabins",
 				"Flush all lavatories in cabins",
 				"Walk the perimeter of property"
+			],
+		
+		"Annually Tasks" :
+			[
+				"A happy birthday party",
+				"An aniversary evening",
+				"Two weeks of travel"
 			]
+		
 	]
 
 	
